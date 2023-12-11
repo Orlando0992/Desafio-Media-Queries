@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "nav"
+        "filtro"
+        "galeria "
+        "paginas"
+        "footer";
+    grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
+    height: 100vh;
+}
+
+/*CODIGO NAV-BAR*/
+nav {
+    background-color:#14402b;
+    grid-area: nav;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.categorias {
+    display: none;
+}
+
+.nav-bar .logo {
+    display: flex;
+    gap: 15px;
+}
+
+/*CODIGO FILTRO*/
+.contenedor01 {
+    background-color: #e3e5e2;
+    grid-area: filtro;
+    text-align: center;
+}
+
+.filtro p {
+    padding: 10px;
+}
+
+.busqueda  {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    background-color: white;
+    width: 50%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+/*CODIGO GALERIA*/
+main {
+    grid-area: galeria;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+}
+
+.tarjeta {
+    border: solid 2px black;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta img {
+    width: 400px;
+}
+
+.detalle {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+    gap: 15px;
+    align-items: center;
+}
+
+button {
+    background-color: #319b5f;
+    color: white;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+/*CODIGO PARA PESTAÑAS*/
+.paginas {
+    grid-area: paginas;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+}
+
+.pestañas {
+    display: flex;
+    padding: 0px 80px;
+    list-style: none;
+}
+
+.pestañas li {
+    border: solid 1px silver;
+    height: 30px;
+    width: 40px;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CODIGO PIE DE PAGINA*/
+footer {
+    background-color: #1a623c;
+    grid-area: footer;
+    color: white;
+}
+
+.container_pie_de_pagina {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container_pie_de_pagina  .logo {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+/*CODIGO MEDIA QUERIES*/
+@media screen and (min-width: 992px) {
+    body {
+        background-color: white;
+        grid-template-areas: 
+            "nav filtro filtro"
+            "nav galeria galeria "
+            "footer paginas paginas ";
+        grid-template-columns: 1fr 8fr ;
+        grid-template-rows: 1fr 10fr  1fr ;
+        height: 100vh;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .nav-bar {
+        align-items: start;
+        padding: 20px 20px;
+        font-size: 15px;
+        display: inline-block;
+    }
+
+    .icono {
+        display: none;
+    }
+
+    .categorias, li{
+        display: flex;
+        list-style-type: none;
+        flex-direction: column;
+        margin: 40px 15px;
+        font-size: 15px;
+    }
+
+    .busqueda {
+        width: 90%;
+        height: 30px;
+        justify-content: space-between;
+        padding: 0px 15px;
+    }
+
+    .tarjeta img {
+        width: 300px;
+    }
+
+    .pestañas li {
+        margin: auto;
+    }
+
+    
+}
+
